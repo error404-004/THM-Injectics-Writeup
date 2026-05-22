@@ -20,7 +20,9 @@ I started with directory enumeration using Gobuster.
 ```bash
 gobuster dir -u http://TARGET_IP/ -w /usr/share/wordlists/dirb/common.txt
 ```
+## Output
 
+![Gobuster](images/enumeration.png)
 Interesting directories discovered:
 
 ```text
@@ -60,7 +62,7 @@ Inspecting `script.js` revealed a blacklist filter:
 ```javascript
 const invalidKeywords = ['or', 'and', 'union', 'select', '"', "'"];
 ```
-
+![Gobuster](images/client.png)
 Observations:
 
 * filtering was only client-side
@@ -118,7 +120,7 @@ While continuing enumeration, I discovered:
 ```text
 /mail.log
 ```
-
+![Gobuster](images/mail.png)
 The file revealed:
 
 * operational details
